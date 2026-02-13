@@ -83,6 +83,19 @@ h2 {
     box-shadow: 0 15px 40px rgba(0,0,0,0.35);
 }
 
+.card a {
+    display: inline-block;
+    margin-top: 8px;
+    color: #60a5fa;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.card a:hover {
+    opacity: 0.8;
+}
+
+
 .card strong {
     font-size: 1.1rem;
 }
@@ -156,33 +169,46 @@ System Design Engineer<br><br>
 <section>
 <h2>Selected Projects</h2>
 
-<div class="project">
-<strong>High Throughput Point Cloud Pipeline</strong><br>
-Designed optimized pipeline achieving sub 5ms latency for 1M points
-through vectorized kernels and memory tiling.
+<h2>Academic Publications</h2>
+
+<div class="card">
+<strong>New Features for the Detection of Fetal QRS Complexes in Non-Invasive Fetal Electrocardiograms</strong><br>
+<em>Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC), 2023</em>
+<p>
+Proposed a computationally efficient method for detecting fetal QRS complexes from single channel non invasive ECG signals without maternal ECG cancellation. 
+The approach leverages spectral differences between maternal and fetal components and combines time and time frequency features with k means clustering.<br>
+Validated on real and synthetic public datasets, achieving up to 96.3 percent sensitivity and 90.4 percent F1 score, 
+demonstrating accurate and low complexity fetal heart rate monitoring.
+</p>
+<a href="https://link-to-paper.com" target="_blank">View Paper</a>
 </div>
 
-<div class="project">
-<strong>Embedded Convolution Optimization</strong><br>
-Rewrote C++ reference convolution into C for DSP,
-improving throughput and memory efficiency.
-</div>
-
-<div class="project">
-<strong>SLAM Performance Study</strong><br>
-Analyzed compute vs memory behavior of SLAM blocks
-and proposed architectural optimizations.
+<div class="card">
+<strong>Deep Learning with Sparse Representation for Biomedical Signals</strong><br>
+<em>IEEE, 2023</em>
+<p>
+Developed two frameworks that integrate wavelet based multiresolution analysis into deep convolutional neural networks to improve model interpretability and efficiency.<br>
+The first framework combines continuous wavelet transform with DCNN for fetal ECG identification from non invasive recordings. 
+The second embeds discrete wavelet transform filter banks within an encoder decoder architecture for brain MRI skull stripping and tissue segmentation.<br>
+The unified approach reduces model complexity while maintaining strong performance across biomedical signal and imaging tasks.
+</p>
+<a href="https://link-to-paper.com" target="_blank">View Paper</a>
 </div>
 
 </section>
 
 <section>
 <h2>Education</h2>
-<p>
-<strong>IIT Bombay</strong><br>
-M.Tech<br>
-2023
-</p>
+
+<div class="card">
+<strong>M.Tech, Electrical Engineering</strong><br>
+IIT Bombay, 2023
+</div>
+
+<div class="card">
+<strong>B.Tech, Electronics Engineering</strong><br>
+Ramdeobaba University, Nagpur, 2019
+</div>
 </section>
 
 <footer>
