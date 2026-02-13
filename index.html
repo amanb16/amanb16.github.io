@@ -30,7 +30,7 @@ body {
 
 header {
     text-align: left;
-    margin-bottom: 90px;
+    margin-bottom: 70px;
 }
 
 .profile-img {
@@ -126,7 +126,7 @@ h2 {
 }
 
 .card {
-    margin-bottom: 34px;
+    margin-bottom: 40px;
     padding: 32px;
     border-radius: 16px;
     background: #181a1d;
@@ -171,6 +171,16 @@ footer {
     font-size: 0.85rem;
     color: #8b9096;
 }
+.scroll-progress {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 0;
+    background: background: rgba(199,204,210,0.6);
+    z-index: 999;
+    transition: height 0.1s ease;
+}
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
@@ -180,6 +190,7 @@ footer {
 </head>
 
 <body>
+<div class="scroll-progress" id="scrollBar"></div>
 <nav class="side-nav">
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
@@ -273,6 +284,13 @@ Ramdeobaba University, Nagpur, 2019
 </footer>
 
 </div>
-
+<script>
+window.addEventListener("scroll", function() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    document.getElementById("scrollBar").style.height = scrollPercent + "%";
+});
+</script>
 </body>
 </html>
