@@ -23,12 +23,13 @@ body {
 
 .container {
     max-width: 880px;
-    margin: auto;
-    padding: 100px 28px;
+    margin-left: 240px;
+    padding: 100px 40px;
 }
 
+
 header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 90px;
 }
 
@@ -71,28 +72,50 @@ h1 {
     text-shadow: 0 0 8px rgba(142,166,201,0.4);
 }
 
-nav {
-    text-align: center;
-    margin-bottom: 60px;
+.side-nav {
+    position: fixed;
+    left: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
 }
+.side-nav::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: -40px;
+    height: 120%;
+    width: 1px;
+    background: rgba(255,255,255,0.06);
+}
 
-nav a {
-    margin: 0 18px;
+.side-nav a {
     text-decoration: none;
     color: #8b9096;
-    transition: color 0.2s ease;
+    opacity: 0.7;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
-nav a:hover {
+.side-nav a:hover {
     color: #ffffff;
+    transform: translateX(4px);
+    opacity: 1;
 }
+
 
 section {
     margin-top: 100px;
     padding-top: 60px;
     border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+section:first-of-type {
+    border-top: none;
+    padding-top: 0;
 }
 
 h2 {
@@ -109,6 +132,18 @@ h2 {
     background: #181a1d;
     border: 1px solid rgba(255,255,255,0.05);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card a {
+    display: inline-block;
+    margin-top: 12px;
+    text-decoration: underline;
+    color: #9fb3d1;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.card a:hover {
+    color: #d7e3ff;
 }
 
 .card:hover {
@@ -145,16 +180,16 @@ footer {
 </head>
 
 <body>
-
+<nav class="side-nav">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#publications">Publications</a>
+    <a href="#education">Education</a>
+</nav>
+    
 <div class="container">
 
 <header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#publications">Publications</a>
-        <a href="#education">Education</a>
-    </nav>
 
     <img src="A9EA0F70-3AEE-4D31-8885-2C5054711950_Original.png" alt="Profile Photo" class="profile-img">
 
