@@ -6,13 +6,19 @@
 <title>Aman Butoliya | System Design Engineer</title>
 
 <style>
-<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
     background: #111315;
     color: #e8eaed;
     line-height: 1.75;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 .container {
@@ -35,11 +41,15 @@ header {
     box-shadow: 0 30px 60px rgba(0,0,0,0.45);
 }
 
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.4px;
+}
+
 h1 {
     margin: 32px 0 10px;
-    font-size: 2.6rem;
+    font-size: 2.7rem;
     font-weight: 600;
-    letter-spacing: 0.3px;
 }
 
 .subtitle {
@@ -53,23 +63,43 @@ h1 {
     text-decoration: none;
     color: #8ea6c9;
     font-weight: 500;
-    transition: opacity 0.2s ease;
+    transition: all 0.25s ease;
 }
 
 .links a:hover {
-    opacity: 0.7;
+    color: #cbd5ff;
+    text-shadow: 0 0 8px rgba(142,166,201,0.4);
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+nav a {
+    margin: 0 18px;
+    text-decoration: none;
+    color: #8b9096;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
 }
 
 section {
     margin-top: 100px;
+    padding-top: 60px;
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 h2 {
-    font-size: 1.45rem;
+    font-size: 1.55rem;
     font-weight: 600;
     margin-bottom: 35px;
     color: #f5f6f7;
-    letter-spacing: 0.2px;
 }
 
 .card {
@@ -78,17 +108,12 @@ h2 {
     border-radius: 16px;
     background: #181a1d;
     border: 1px solid rgba(255,255,255,0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 20px 45px rgba(0,0,0,0.35);
-}
-
-.card strong {
-    font-size: 1.08rem;
-    font-weight: 600;
+    transform: translateY(-4px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.35);
 }
 
 ul {
@@ -111,10 +136,12 @@ footer {
     font-size: 0.85rem;
     color: #8b9096;
 }
-</style>
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 </style>
-
 </head>
 
 <body>
@@ -122,7 +149,13 @@ footer {
 <div class="container">
 
 <header>
-    <!-- Replace profile.jpg with your image file -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
+    </nav>
+
     <img src="A9EA0F70-3AEE-4D31-8885-2C5054711950_Original.png" alt="Profile Photo" class="profile-img">
 
     <h1>Aman Butoliya</h1>
@@ -138,44 +171,39 @@ footer {
     </div>
 </header>
 
-<section>
+<section id="about">
 <h2>About Me</h2>
 <p>
-I help ambitious algorithms learn some discipline before they hit real hardware.<br>
+I help ambitious algorithms learn some discipline before they hit real hardware.<br><br>
 I work on DSP driven perception systems, transforming high level concepts into embedded solutions that meet tight performance budgets. 
-My focus is keeping things fast, efficient, and deterministic when constraints are real.<br>
+My focus is keeping things fast, efficient, and deterministic when constraints are real.<br><br>
 Performance is not optional. It is part of the design.
 </p>
 </section>
 
-<section>
+<section id="experience">
 <h2>Professional Experience</h2>
 
-<div class="project">
+<div class="card">
 <strong>Cadence</strong><br>
 System Design Engineer<br><br>
 • Lead performance critical perception workloads on embedded DSP platforms, with focus on ISP and large scale point cloud processing under strict on chip memory constraints<br>
-• Transform reference models and customer requirements into deterministic, high performance DSP execution through SIMD optimization and memory aware design<br>
-• Architect tile level compute kernels and frame level execution flows, orchestrating DMA and data movement for predictable latency<br>
-• Conduct system level compute and memory analysis to drive architectural optimization decisions beyond isolated kernel tuning<br>
-• Contribute to customer facing DSP SDK modules, defining stable APIs and ensuring regression validated behavior across releases<br>
+• Transform reference models and customer requirements into deterministic, high performance DSP execution<br>
+• Architect tile level compute kernels and frame level execution flows for predictable latency<br>
+• Conduct system level compute and memory analysis to guide architectural optimizations<br>
+• Contribute to customer facing DSP SDK modules ensuring stable and regression validated releases
 </div>
 
 </section>
 
-<section>
-<h2>Selected Projects</h2>
-
+<section id="publications">
 <h2>Academic Publications</h2>
 
 <div class="card">
 <strong>New Features for the Detection of Fetal QRS Complexes in Non-Invasive Fetal Electrocardiograms</strong><br>
-<em>Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC), 2023</em>
+<em>IEEE EMBC, 2023</em>
 <p>
-Proposed a computationally efficient method for detecting fetal QRS complexes from single channel non invasive ECG signals without maternal ECG cancellation. 
-The approach leverages spectral differences between maternal and fetal components and combines time and time frequency features with k means clustering.<br>
-Validated on real and synthetic public datasets, achieving up to 96.3 percent sensitivity and 90.4 percent F1 score, 
-demonstrating accurate and low complexity fetal heart rate monitoring.
+Proposed a computationally efficient method for fetal QRS detection from single channel non invasive ECG signals. Achieved 96.3 percent sensitivity and 90.4 percent F1 score on public datasets.
 </p>
 <a href="https://ieeexplore.ieee.org/document/10340399" target="_blank">View Paper</a>
 </div>
@@ -184,17 +212,14 @@ demonstrating accurate and low complexity fetal heart rate monitoring.
 <strong>Deep Learning with Sparse Representation for Biomedical Signals</strong><br>
 <em>IEEE, 2023</em>
 <p>
-Developed two frameworks that integrate wavelet based multiresolution analysis into deep convolutional neural networks to improve model interpretability and efficiency.<br>
-The first framework combines continuous wavelet transform with DCNN for fetal ECG identification from non invasive recordings. 
-The second embeds discrete wavelet transform filter banks within an encoder decoder architecture for brain MRI skull stripping and tissue segmentation.<br>
-The unified approach reduces model complexity while maintaining strong performance across biomedical signal and imaging tasks.
+Integrated multiresolution wavelet analysis into deep neural networks to reduce model complexity while maintaining strong performance in biomedical signal and imaging tasks.
 </p>
 <a href="https://ieeexplore.ieee.org/document/10167363" target="_blank">View Paper</a>
 </div>
 
 </section>
 
-<section>
+<section id="education">
 <h2>Education</h2>
 
 <div class="card">
